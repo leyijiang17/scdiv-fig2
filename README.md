@@ -12,3 +12,8 @@ C. Qiu, B. K. Martin, I. C. Welsh, R. M. Daza, T.-M. Le, X. Huang, E. K. Nichols
 
 ### Data preprocessing
 Following the quality control standards outlined in the paper, we identified the top 2,000 highly variable genes (HVGs) per embryonic stage using Seurat's `FindVariableFeatures`. To ensure robustness across developmental stages, we retained only the genes flagged as variable in more than three independent time points, resulting in a final set of 3,754 HVGs. All separate run data were then integrated into a single, unified `.h5ad` file restricted to these features, and cell type annotations from the paper's supplementary table were appended directly to the metadata.
+
+### Python Script Details
+* `mouse_clustering.py`: Generates Seurat-style *de novo* clustering.
+* `mouse_hill.py`: Computes Hill numbers.
+* `mouse_scdiv.py`: Computes LC diversities.

@@ -17,9 +17,7 @@ major_trajectory_key = 'major_trajectory'
 leiden_key = 'leiden'
 
 def celltypes_in_sample(sample, key=cell_type_key):
-    # List of cell types in the given sample (drop missing trajectories)
     ct = adata.obs.loc[adata.obs[groupby] == sample, key].dropna()
-    # keep original type order-agnostic but remove any non-string artifacts
     return list(ct.astype(str).unique())
 
 def hill_number(dist, q):
